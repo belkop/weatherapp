@@ -170,4 +170,19 @@ $(document).ready(function () {
     //adding the clock displaying time on the page
     //create div then jquery to put it into the dom.
 
+    function myTime(){
+      var Time = moment().format('LTS');
+      $(".currentTime").html(Time);
+    }
+
+    setInterval(myTime, 1000);
+
+    //Get the input values
+
+    
+    // 1. Give each input a class
+    // 2. Save input values into variables
+    // 3. Get epoch time from those values
+
+    //Convert those values to epoch time
 });
