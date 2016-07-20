@@ -143,7 +143,7 @@
         <table border="0" align="center" bgcolor="#c0c0c0" cellspacing="0" cellpadding="10,0,0,20" width="400">
             <tr>
                 <td colspan="3">
-                    <form name="arlm">
+                    <form name="alarm" input type="value" class="alarm">
                         <font size="1" face="verdana, arial, helvetica, ms sans serif">
                             <b>Alarm Time</b>
                         </font>
@@ -168,11 +168,11 @@
             </tr>
             <tr align="center">
                 <td>
-                    <input type="text" size="2" name="hr" onFocus="select()" />
+                    <input type="text" size="4" name="hr" class="hr" />
 
                 </td>
                 <td>
-                    <input type="text" size="2" name="mts" onFocus="select()" />
+                    <input type="text" size="4" name="min" class="min" />
                 </td>
                 <td>
                     <input type="text" size="2" value="am" name="am_pm" onFocus="select()" />
@@ -189,17 +189,17 @@
                 <td colspan="3">
                     <input type="text" size="15" value="Wake Up!" name="message" /><br>
                     <input type="checkbox" name="C1" value="ON" onClick="soundcheck(this)">
-                    <font size="1" face="verdana, arial, helvetica, ms sans serif">Play music?</font>
+
                 </td>
             </tr>
             <tr>
                 <td align="center" colspan="3">
-                    <input type="button" size="2" value="Set Alarm" onClick="alarm()" />
+                    <input type="button" size="2" value="Set Alarm" class="setAlarm"/>
                 </td>
             </tr>
             <tr>
                 <td align="center" colspan="3">
-                    <input type="button" size="2" value="Reset" onClick="reset()" />
+                    <input type="button" size="2" value="Reset"/>
                 </td>
             </tr>
         </table>

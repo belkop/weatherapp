@@ -116,7 +116,8 @@ $(document).ready(function () {
     var tomorrowsCondtionCode;
     var tomorrowsHighF;
     var tomorrowsDescription;
-
+    var alarmTime;
+    var hasAlarmed = false;
 
     // Use jQuery getJSON function to get Melbourne's weather forcast from the yahoo weather API - https://developer.yahoo.com/weather/
     // You can put this link in your browser and view the data
@@ -173,16 +174,34 @@ $(document).ready(function () {
     function myTime(){
       var Time = moment().format('LTS');
       $(".currentTime").html(Time);
+      var nowTime = moment().valueOf();
+      console.log(nowTime);
+      console.log(alarmTime);
+      if (nowTime >= alarmTime){
+        //Run spotify music code
+        
+        clearInterval(interval)
+      }
     }
 
-    setInterval(myTime, 1000);
+    var interval = setInterval(myTime, 1000);
 
     //Get the input values
 
-    
+
+
+
+
     // 1. Give each input a class
     // 2. Save input values into variables
     // 3. Get epoch time from those values
+    $(".setAlarm").click(function(){
+      var hr = $(".hr").val();
+      var min = $(".min").val();
+      console.log(hr,min);
+      var epoch = moment({hour: hr, minute: min});
+      alarmTime = epoch.valueOf()
+    })
 
     //Convert those values to epoch time
 });
