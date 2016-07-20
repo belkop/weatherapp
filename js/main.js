@@ -148,16 +148,13 @@ $(document).ready(function () {
     }).done(function (){
 
         //you can add a done function to run after success function completes
-
         //use maths to convert Farenheit value to Celsius
         var todaysHighC = (todaysHighF-32)*5/9;
         //use JavaScript toFixed() function to round to one decimal place
         todaysHighC = todaysHighC.toFixed(1);
-
         //same for tomorrow's high
         var tomorrowsHighC = (tomorrowsHighF-32)*5/9;
         tomorrowsHighC = tomorrowsHighC.toFixed(1);
-
         //use jQuery append function to add temperature and descriptions
         $('.today p').append('<span>'+todaysHighC+'</span> degrees C <br>'+todaysDescription);
         $('.tomorrow p').append('<span>'+tomorrowsHighC+'</span> degrees C <br>'+tomorrowsDescription);
@@ -169,5 +166,8 @@ $(document).ready(function () {
         iconClass = setWeatherIcon(tomorrowsCondtionCode);
         $('.tomorrow .wi').addClass(iconClass);
     });
+
+    //adding the clock displaying time on the page
+    //create div then jquery to put it into the dom.
 
 });
