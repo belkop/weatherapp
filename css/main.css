@@ -6,13 +6,17 @@ html {
   box-sizing: inherit;
 }
 .container {
-    max-width: 600px;
+    max-width: 400px;
     margin: 0 auto;
 }
+.albumContainer{
+  width: 400px;
+}
+
 body {
     margin: 0;
     font-family: 'Helvetica Neue', sans-serif;
-    
+
 }
 h1 {
     font-weight: 100;
