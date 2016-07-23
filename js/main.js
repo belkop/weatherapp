@@ -178,13 +178,12 @@ $(document).ready(function () {
       console.log(nowTime);
       console.log(alarmTime);
       if (nowTime >= alarmTime){
-        //Run spotify music code
-        alert('arlarm sound')
-
-
         // request below url
-         $.getJSON("https:api.spotify.com/v1/search?q=" + tomorrowsDescription + "&type=artist", function(data){
-           console.log(data)
+         $.getJSON("https:api.spotify.com/v1/search?q=" + tomorrowsDescription + "&type=track", function(data){
+           var imageUrl = data.tracks.items[0].album.images[0].url
+           var $img = $('<img />')
+           $img.attr('src', imageUrl);
+           $('.albumContainer').append($img)
          });
         clearInterval(interval)
       }
