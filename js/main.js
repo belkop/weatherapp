@@ -1,4 +1,4 @@
-// function to return http://erikflowers.github.io/weather-icons/ icon class based on yahoo condition code thanks: https://gist.github.com/Kepro/9ea2a918fd6f0a58b474
+//  function to return http://erikflowers.github.io/weather-icons/ icon class based on yahoo condition code cheers to you: https://gist.github.com/Kepro/9ea2a918fd6f0a58b474
 function setWeatherIcon(condid) {
   var icon = '';
       switch(condid) {
@@ -179,7 +179,13 @@ $(document).ready(function () {
       console.log(alarmTime);
       if (nowTime >= alarmTime){
         //Run spotify music code
-        
+        alert('arlarm sound')
+
+
+        // request below url
+         $.getJSON("https:api.spotify.com/v1/search?q=" + tomorrowsDescription + "&type=artist", function(data){
+           console.log(data)
+         });
         clearInterval(interval)
       }
     }
@@ -187,21 +193,27 @@ $(document).ready(function () {
     var interval = setInterval(myTime, 1000);
 
     //Get the input values
-
-
-
-
-
     // 1. Give each input a class
     // 2. Save input values into variables
     // 3. Get epoch time from those values
     $(".setAlarm").click(function(){
       var hr = $(".hr").val();
       var min = $(".min").val();
-      console.log(hr,min);
-      var epoch = moment({hour: hr, minute: min});
+      var meridien = $(".am_pm").val();
+      console.log(meridien);
+      if (meridien == 'am'){
+        var epoch = moment({hour: hr, minute: min});    //Convert those values to epoch time
+      }
+      else{
+        var epoch = moment({hour: parseInt(hr) + 12, minute: min});    //Convert those values to epoch time
+        console.log(hr);
+        console.log(parseInt(hr) + 12);
+      }
       alarmTime = epoch.valueOf()
     })
 
-    //Convert those values to epoch time
 });
+
+//authentication in spotify
+//get song name by id
+//use a switch case to change the song via key words
